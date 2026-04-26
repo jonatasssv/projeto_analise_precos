@@ -1,21 +1,6 @@
 import pandas as pd
+from estrutura_de_dados import dados_vendas
 
-# Dados fictícios para o seu portfólio
-data = {
-    'Mercado': ['Trimais', 'Violeta', 'Trimais', 'Violeta'],
-    'Produto': ['Arroz', 'Arroz', 'Feijão', 'Feijão'],
-    'Preço': [25.90, 24.50, 8.50, 9.10]
-}
+df = pd.DataFrame(dados_vendas)
 
-df = pd.DataFrame(data)
-
-# Uma análise simples: Preço médio por produto
-media_precos = df.groupby('Produto')['Preço'].mean()
-
-print("--- Análise de Preços Inicial ---")
 print(df)
-print("\n--- Média por Produto ---")
-print(media_precos)
-
-# Salva em CSV (mais leve e abre em qualquer lugar)
-df.to_csv('resultado_precos.csv', index=False, sep=';', encoding='latin-1')
