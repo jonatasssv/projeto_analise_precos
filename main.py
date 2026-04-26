@@ -16,3 +16,6 @@ print("--- Análise de Preços Inicial ---")
 print(df)
 print("\n--- Média por Produto ---")
 print(media_precos)
+
+# Salva em CSV (mais leve e abre em qualquer lugar)
+df.to_csv('resultado_precos.csv', index=False, sep=';', encoding='latin-1')
